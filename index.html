@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light/Dark Mode</title>
+    <style>
+        .imgicon{
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            
+            
+            border-radius: 30px;
+        }
+
+        .active{
+            border: 2px solid rgb(44, 44, 44);
+            border-radius: 40px;
+            background-color: rgb(44, 44, 44)lack;
+            
+        }
+
+        .themelight{
+            background-color: #D9AFD9;
+            background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+            height: 100vh;
+
+        }
+        .themedark{
+            background-color: #020202;
+background-image: linear-gradient(90deg, #020202 0%, #4c474c 100%);
+
+            height: 100vh;
+            color: white;
+        }
+
+    </style>
+</head>
+<body id="body">
+    <h1>LIGHT AND DARK MODE  <img src="light.png" class="imgicon"  onclick="lightmode()" id="img-light"/>
+        <img src="night-mode.png" class="imgicon " onclick="darkmode()" id="img-dark"/> </h1>
+   
+    
+
+    <script>
+        function lightmode(){
+            const imglight = document.getElementById('img-light');
+            imglight.classList.add('active');
+
+            const imgdark = document.getElementById('img-dark');
+            imgdark.classList.remove('active');
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.className = ('themelight');
+        }
+        function darkmode(){
+            const imglight = document.getElementById('img-light');
+            imglight.classList.remove('active');
+
+            const imgdark = document.getElementById('img-dark');
+            imgdark.classList.add('active');
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.className = ('themedark');
+        }
+    </script>
+</body>
+</html>
